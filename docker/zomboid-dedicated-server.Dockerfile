@@ -41,5 +41,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
+VOLUME /home/steam/ZomboidDedicatedServer
+VOLUME /home/steam/ZomboidConfig
+
 # Run the setup script
 ENTRYPOINT ["/bin/bash", "/home/steam/run_server.sh"]
